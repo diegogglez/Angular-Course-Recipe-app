@@ -24,4 +24,16 @@ export class ShoppingListService {
     this.ingredientsChanged.emit(this.ingredients.slice())
   }
 
+  addIngridients(ingredients: Ingredient[]) {
+    // for (let ingredient of ingredients) {
+      // this.addIngredient(ingredient);
+    // } 
+    //!Con este método generamos demasiados eventos
+
+    //?El spread operator nos permite separar un array en una lista de elementos para poder pushearlos de una sola vez
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice())
+
+  }
+
 }
