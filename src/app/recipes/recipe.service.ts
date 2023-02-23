@@ -39,6 +39,10 @@ export class RecipeService {
     //con .slice() retornamos una copia del arr original de recipes, no alteramos el original
   }
 
+  getRecipe(index: number) {
+    return this.recipes.slice()[index];
+  }
+
   addIngredientsToSL(ingredients: Ingredient[]) {
     this.shoppingListService.addIngridients(ingredients)
   }
